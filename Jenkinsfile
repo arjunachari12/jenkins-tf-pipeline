@@ -12,11 +12,7 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/arjunachari12/jenkins-tf-pipeline.git'
-            }
-        }
+       
 
         stage('Terraform Init') {
             steps {
@@ -37,9 +33,5 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            sh 'terraform destroy -auto-approve'  // Optional cleanup
-        }
-    }
+    
 }
